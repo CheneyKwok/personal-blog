@@ -11,7 +11,7 @@ tags: MySQL
 即对整个数据库实例进行加锁，命令：
 
 ```yaml
- Flush tables with read;
+ Flush tables with read lock;
 ```
      
 执行该命令后，其他线程的以下语句会被阻塞：
@@ -33,13 +33,13 @@ tags: MySQL
 
 mysqldump 加上 –single-transaction  参数可以保证备份后的库是在一个逻辑时间点，并且备份期间可以正常更新。
 
-> –single-transaction 使用的前提是库中的所有表的存储引擎都使用了事务，否则只能使用
+> –single-transaction 使用的前提是库中的所有表的存储引擎都使用了事务，否则只能使用 FTWRL。
 
 原因是当 mysqldump 使用参数 –single-transaction 时，导出数据之前会启动一个事务，来确保拿到一致性视图。而由于 MVCC 的支持，可以执行更新。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM5NTI2Mzc5LC05OTkzNDAxMDgsLTY2MD
-M3Nzk4NywtMjk0ODAyNDksLTYwODU0NzgzNywxMDQ2MTEzNjM3
-LDEyNTE0Mzc0MzYsMjA2ODg0Njk3NSwtNTE0MDk2ODMxLDE5OT
-EwNDM0MjcsLTE5NDM0NjU1MzYsLTEzNjk0NDYzMTAsLTUwMTAz
-MDg2MF19
+eyJoaXN0b3J5IjpbMTMyNTYwMjMyMSwtOTk5MzQwMTA4LC02Nj
+AzNzc5ODcsLTI5NDgwMjQ5LC02MDg1NDc4MzcsMTA0NjExMzYz
+NywxMjUxNDM3NDM2LDIwNjg4NDY5NzUsLTUxNDA5NjgzMSwxOT
+kxMDQzNDI3LC0xOTQzNDY1NTM2LC0xMzY5NDQ2MzEwLC01MDEw
+MzA4NjBdfQ==
 -->
