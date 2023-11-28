@@ -10,9 +10,9 @@ tags: MySQL
 
 即对整个数据库实例进行加锁，命令：
 
-
+     Flush tables with read lock;
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNDk0NjMxLC0xOTQzNDY1NTM2LC0xMz
+eyJoaXN0b3J5IjpbNDc3MDM0NTM2LC0xOTQzNDY1NTM2LC0xMz
 Y5NDQ2MzEwLC01MDEwMzA4NjBdfQ==
 -->
