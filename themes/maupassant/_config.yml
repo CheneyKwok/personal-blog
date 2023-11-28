@@ -100,11 +100,11 @@ totop: true ## If you want to use the rocketship button to return to the top, se
 external_css: false ## If you want to load an external CSS file, set the value to true and create a file named "external.css" in the source/css folder.
 post_content_length: 180 ## Set the length of the post summary displayed on home page when no description written.
 
-highlight:  
- enable: true  
- auto_detect: true  
- line_number: true  
- tab_replace:  
+# highlight:  
+#  enable: true  
+#  auto_detect: true  
+#  line_number: true  
+#  tab_replace:  
 
 menu:
   - page: home
