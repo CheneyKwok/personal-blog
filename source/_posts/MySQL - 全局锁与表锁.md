@@ -31,9 +31,11 @@ tags: MySQL
 
 官方自带的逻辑备份工具是 mysqldump。前提是当前MySQL 的引擎要
 
+mysqldump 加上 –single-transaction  参数可以保证备份后的库是在一个逻辑时间点，
+
 当 mysqldump 使用参数 –single-transaction 时，导出数据之前会启动一个事务，来确保拿到一致性视图。并且由于 MVCC 的支持，这个过程是可以执行更新的。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NDc4MTA0NCwtOTk5MzQwMTA4LC02Nj
+eyJoaXN0b3J5IjpbMTIyOTI4MTIwMSwtOTk5MzQwMTA4LC02Nj
 AzNzc5ODcsLTI5NDgwMjQ5LC02MDg1NDc4MzcsMTA0NjExMzYz
 NywxMjUxNDM3NDM2LDIwNjg4NDY5NzUsLTUxNDA5NjgzMSwxOT
 kxMDQzNDI3LC0xOTQzNDY1NTM2LC0xMzY5NDQ2MzEwLC01MDEw
