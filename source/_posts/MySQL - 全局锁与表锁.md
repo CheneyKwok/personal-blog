@@ -11,8 +11,11 @@ tags: MySQL
 即对整个数据库实例进行加锁，命令：
 
      Flush tables with read lock;
+执行该命令后，其他线程的以下语句会被阻塞：
+
+ - 数据更新语句（增删改）
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc3MDM0NTM2LC0xOTQzNDY1NTM2LC0xMz
-Y5NDQ2MzEwLC01MDEwMzA4NjBdfQ==
+eyJoaXN0b3J5IjpbLTE1ODU1MDQ2NjAsLTE5NDM0NjU1MzYsLT
+EzNjk0NDYzMTAsLTUwMTAzMDg2MF19
 -->
