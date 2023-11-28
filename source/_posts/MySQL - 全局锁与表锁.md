@@ -10,7 +10,7 @@ tags: MySQL
 
 即对整个数据库实例进行加锁，命令：
 
-     Flush tables with read lock;
+     Flush tables with read
      
 执行该命令后，其他线程的以下语句会被阻塞：
 
@@ -19,6 +19,6 @@ tags: MySQL
  - 更新类事务的语句
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA5NDQwOTEzLDE5OTEwNDM0MjcsLTE5ND
+eyJoaXN0b3J5IjpbMzQxNDA4NzM3LDE5OTEwNDM0MjcsLTE5ND
 M0NjU1MzYsLTEzNjk0NDYzMTAsLTUwMTAzMDg2MF19
 -->
