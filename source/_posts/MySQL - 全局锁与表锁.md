@@ -5,6 +5,10 @@ tags: MySQL
 ---
 **根据加锁范围，MySQL 大致可分为全局锁、表锁和行锁。**
 
+## 全局锁
+
+即对整个表进行加锁
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMzYxODI2MywtNTAxMDMwODYwXX0=
+eyJoaXN0b3J5IjpbLTEzNjk0NDYzMTAsLTUwMTAzMDg2MF19
 -->
