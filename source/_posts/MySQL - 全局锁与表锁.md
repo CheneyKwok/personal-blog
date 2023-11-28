@@ -7,8 +7,9 @@ tags: MySQL
 
 ## 全局锁
 
-即对整个表进行加锁
+即对整个数据库实例进行加锁
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjk0NDYzMTAsLTUwMTAzMDg2MF19
+eyJoaXN0b3J5IjpbLTE5NDM0NjU1MzYsLTEzNjk0NDYzMTAsLT
+UwMTAzMDg2MF19
 -->
