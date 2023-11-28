@@ -18,9 +18,10 @@ tags: MySQL
 
  - 数据更新语句（增删改）
  - 数据定义语句（表的建立和修改、索引的建立和修改）
- >  更新类的事务的提交语句可以提交，原因待
+ >  更新类的事务的提交语句可以提交，原因待深究
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2ODM4MDE0MCwtMjk0ODAyNDksLTYwOD
+eyJoaXN0b3J5IjpbLTY2MDM3Nzk4NywtMjk0ODAyNDksLTYwOD
 U0NzgzNywxMDQ2MTEzNjM3LDEyNTE0Mzc0MzYsMjA2ODg0Njk3
 NSwtNTE0MDk2ODMxLDE5OTEwNDM0MjcsLTE5NDM0NjU1MzYsLT
 EzNjk0NDYzMTAsLTUwMTAzMDg2MF19
