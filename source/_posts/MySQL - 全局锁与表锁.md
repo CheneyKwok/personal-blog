@@ -15,9 +15,9 @@ tags: MySQL
 
  - 数据更新语句（增删改）
  - 数据定义语句（表的修改、索引的建立）
- - 更新类事务
+ - 更新类事务的语句
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxNTM2MTYxNywtMTk0MzQ2NTUzNiwtMT
+eyJoaXN0b3J5IjpbMTk5MTA0MzQyNywtMTk0MzQ2NTUzNiwtMT
 M2OTQ0NjMxMCwtNTAxMDMwODYwXX0=
 -->
