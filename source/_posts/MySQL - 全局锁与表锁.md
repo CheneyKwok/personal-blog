@@ -24,12 +24,15 @@ tags: MySQL
 
 缺点：
 
-- 如果在主库上备份，则备份期间都不能执行更新
-- 如果在从库上备份，则
+- 如果在主库上备份，则备份期间都不能执行更新；
+- 如果在从库上备份，则备份期间从库无法执行从主库同步过来的 binlog，导致主从延迟。
+
+**引申**
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg3NTM2NDIzLC05OTkzNDAxMDgsLTY2MD
-M3Nzk4NywtMjk0ODAyNDksLTYwODU0NzgzNywxMDQ2MTEzNjM3
-LDEyNTE0Mzc0MzYsMjA2ODg0Njk3NSwtNTE0MDk2ODMxLDE5OT
-EwNDM0MjcsLTE5NDM0NjU1MzYsLTEzNjk0NDYzMTAsLTUwMTAz
-MDg2MF19
+eyJoaXN0b3J5IjpbLTY5NzMyMzAxMCwtOTk5MzQwMTA4LC02Nj
+AzNzc5ODcsLTI5NDgwMjQ5LC02MDg1NDc4MzcsMTA0NjExMzYz
+NywxMjUxNDM3NDM2LDIwNjg4NDY5NzUsLTUxNDA5NjgzMSwxOT
+kxMDQzNDI3LC0xOTQzNDY1NTM2LC0xMzY5NDQ2MzEwLC01MDEw
+MzA4NjBdfQ==
 -->
