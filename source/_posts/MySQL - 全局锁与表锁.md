@@ -33,13 +33,13 @@ tags: MySQL
 
 mysqldump 加上 –single-transaction  参数可以保证备份后的库是在一个逻辑时间点，并且备份期间可以正常更新。
 
-> qian'shi
+> –single-transaction 使用的前提是库使用的存储引擎是
 
 原因是当 mysqldump 使用参数 –single-transaction 时，导出数据之前会启动一个事务，来确保拿到一致性视图。而由于 MVCC 的支持，可以执行更新。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTQ4NjU2MjEsLTk5OTM0MDEwOCwtNj
-YwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3LDEwNDYxMTM2
-MzcsMTI1MTQzNzQzNiwyMDY4ODQ2OTc1LC01MTQwOTY4MzEsMT
-k5MTA0MzQyNywtMTk0MzQ2NTUzNiwtMTM2OTQ0NjMxMCwtNTAx
-MDMwODYwXX0=
+eyJoaXN0b3J5IjpbMTY4NTAzMDI0NCwtOTk5MzQwMTA4LC02Nj
+AzNzc5ODcsLTI5NDgwMjQ5LC02MDg1NDc4MzcsMTA0NjExMzYz
+NywxMjUxNDM3NDM2LDIwNjg4NDY5NzUsLTUxNDA5NjgzMSwxOT
+kxMDQzNDI3LC0xOTQzNDY1NTM2LC0xMzY5NDQ2MzEwLC01MDEw
+MzA4NjBdfQ==
 -->
