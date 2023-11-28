@@ -14,8 +14,10 @@ tags: MySQL
 执行该命令后，其他线程的以下语句会被阻塞：
 
  - 数据更新语句（增删改）
+ - 数据定义语句（表的修改、索引的建立）
+ - 更新类事务
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODU1MDQ2NjAsLTE5NDM0NjU1MzYsLT
-EzNjk0NDYzMTAsLTUwMTAzMDg2MF19
+eyJoaXN0b3J5IjpbMTgxNTM2MTYxNywtMTk0MzQ2NTUzNiwtMT
+M2OTQ0NjMxMCwtNTAxMDMwODYwXX0=
 -->
