@@ -70,15 +70,15 @@ MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能�
 - 事务隔离问题：RR 的隔离级别下，在 session A 对 t 的两次查询期间，session B 对 t 的表结构做了修改，则会导致 session A 的两次查询结果不一致，无法满足可重复读。
 - 数据同步问题：session A 对 t 执行更新操作并且未提交，session B 对 t 的表结构做了修改，此时 binlog 中会先记录 alter 操作，再记录更新操作，那么从库在同步时，也会先重做 alter，再重做 update。
 
-
+执行 DML 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2MjY0MjEyMywtNTUwNTMwNzIyLC04Nj
-k1MTcyOTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1
-NiwtNzM5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxND
-Q2MDExODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEw
-OCwtNjYwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3LDEwND
-YxMTM2MzcsMTI1MTQzNzQzNiwyMDY4ODQ2OTc1LC01MTQwOTY4
-MzFdfQ==
+eyJoaXN0b3J5IjpbLTE5NDM3MTYwNjUsLTU1MDUzMDcyMiwtOD
+Y5NTE3Mjk3LDY3NzkwMjY2NiwyMTIzMjQ5MjE3LDExMDYzMTMw
+NTYsLTczOTEyMzg1OSwtNDU5Njk5MTgyLDE5NjMyOTQ4NjUsMT
+Q0NjAxMTg3LDE5NjMyOTQ4NjUsLTEzMTIyOTQzLC05OTkzNDAx
+MDgsLTY2MDM3Nzk4NywtMjk0ODAyNDksLTYwODU0NzgzNywxMD
+Q2MTEzNjM3LDEyNTE0Mzc0MzYsMjA2ODg0Njk3NSwtNTE0MDk2
+ODMxXX0=
 -->
