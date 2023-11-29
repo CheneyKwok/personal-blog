@@ -71,17 +71,16 @@ MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能�
 - 数据同步问题：session A 对 t 执行更新操作并且未提交，session B 对 t 的表结构做了修改，此时 binlog 中会先记录 alter 操作，再记录更新操作，那么从库在同步时，也会先重做 alter，再重做 update。
 
 执行 DML 操作时，会加 MDL 读锁；
-
-执行 DDL 操作时，会加 MDL 写锁。
+执行 DDL  操作时，会加 MDL 写锁。
 
 - 读锁之间不互斥， 因此可以多个线程可以对同一张表进行 DML。
 - 读写锁之间、写锁之间是互斥的， 即 DML 、DDL 之间互相阻塞，DDL 之间互相阻塞。
 
-MDL 可能导致的问题：对一张表执行了 DDL 操作，导致后续该表的所有DML 操作全部阻塞
+MDL 可能导致的问题：对一张表执行了 DDL 操作，导致后续该表的所有DML 操作全部阻塞。
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3MDc2MDgwNywtMTE2OTczMjExMyw5Nz
+eyJoaXN0b3J5IjpbMTI3ODQ2NTI4OSwtMTE2OTczMjExMyw5Nz
 MxNjU1NjgsMjA3OTI3MDAxMSwtNTUwNTMwNzIyLC04Njk1MTcy
 OTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1NiwtNz
 M5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxNDQ2MDEx
