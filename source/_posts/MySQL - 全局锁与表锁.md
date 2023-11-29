@@ -41,8 +41,7 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 
 原因是当 mysqldump 使用参数 –single-transaction 时，导出数据之前会启动一个事务，来确保拿到一致性视图。而由于 MVCC 的支持，可以执行更新。
 
-实现全库只读，`set global readonly = true` 是否可以？
-可以实现只读，但会有其他影响：
+`set global readonly = true` 命令也可以实现全库只读，但会有其他影响：
 
 - readonly 的值可能会用于其他逻辑的判断，比如用来判断一个库是主库还是从库。
 - 异常处理机制上的差异。FTWRL 命令在客户端异常断开时，MySQL 会自动释放该全局锁，而设置 readonly 之后，如果客户端发生异常，整个库会一直保持 readonly 状态。
@@ -66,11 +65,11 @@ UNLOCK TABLES；
 ### 元数据锁（metadata lock， MDL）
 MDL 不需要显示使用，在访问一个表时 MySQL 会自动加上。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2OTUxNzI5Nyw2Nzc5MDI2NjYsMjEyMz
-I0OTIxNywxMTA2MzEzMDU2LC03MzkxMjM4NTksLTQ1OTY5OTE4
-MiwxOTYzMjk0ODY1LDE0NDYwMTE4NywxOTYzMjk0ODY1LC0xMz
-EyMjk0MywtOTk5MzQwMTA4LC02NjAzNzc5ODcsLTI5NDgwMjQ5
-LC02MDg1NDc4MzcsMTA0NjExMzYzNywxMjUxNDM3NDM2LDIwNj
-g4NDY5NzUsLTUxNDA5NjgzMSwxOTkxMDQzNDI3LC0xOTQzNDY1
-NTM2XX0=
+eyJoaXN0b3J5IjpbLTE2NzQ1ODQzOTQsLTg2OTUxNzI5Nyw2Nz
+c5MDI2NjYsMjEyMzI0OTIxNywxMTA2MzEzMDU2LC03MzkxMjM4
+NTksLTQ1OTY5OTE4MiwxOTYzMjk0ODY1LDE0NDYwMTE4NywxOT
+YzMjk0ODY1LC0xMzEyMjk0MywtOTk5MzQwMTA4LC02NjAzNzc5
+ODcsLTI5NDgwMjQ5LC02MDg1NDc4MzcsMTA0NjExMzYzNywxMj
+UxNDM3NDM2LDIwNjg4NDY5NzUsLTUxNDA5NjgzMSwxOTkxMDQz
+NDI3XX0=
 -->
