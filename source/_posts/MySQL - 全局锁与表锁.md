@@ -45,8 +45,9 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 可以实现只读，但会有其他影响：
 
 - readonly 的值可能会用于其他逻辑的判断，比如用来判断一个库是主库还是从库。
+- 异常处理机制上的差异。FTWRL 命令在客户端异常断开时，
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NDM4NTYzNiwtNzM5MTIzODU5LC00NT
+eyJoaXN0b3J5IjpbMTEwNjMxMzA1NiwtNzM5MTIzODU5LC00NT
 k2OTkxODIsMTk2MzI5NDg2NSwxNDQ2MDExODcsMTk2MzI5NDg2
 NSwtMTMxMjI5NDMsLTk5OTM0MDEwOCwtNjYwMzc3OTg3LC0yOT
 Q4MDI0OSwtNjA4NTQ3ODM3LDEwNDYxMTM2MzcsMTI1MTQzNzQz
