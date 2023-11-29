@@ -95,9 +95,9 @@ SELECT * FROM `user`;
 
 ```
 
-此时 session B 和 session C 都会处于阻塞等待状态
+此时 session B 和 session C 都会处于阻塞等待状态，执行  `SHOW PROCESSLIST;` 查看
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEyOTk3NDAyLC0xMTY5NzMyMTEzLDk3Mz
+eyJoaXN0b3J5IjpbODY2MzcwMzg2LC0xMTY5NzMyMTEzLDk3Mz
 E2NTU2OCwyMDc5MjcwMDExLC01NTA1MzA3MjIsLTg2OTUxNzI5
 Nyw2Nzc5MDI2NjYsMjEyMzI0OTIxNywxMTA2MzEzMDU2LC03Mz
 kxMjM4NTksLTQ1OTY5OTE4MiwxOTYzMjk0ODY1LDE0NDYwMTE4
