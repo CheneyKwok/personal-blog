@@ -63,7 +63,7 @@ UNLOCK TABLES；
 对于不支持更细粒度的锁的引擎，表锁是最常用的处理并发的方式。而对于 InnoDB 引擎，其支持行锁，一般不使用表锁。
 
 ### 元数据锁（metadata lock， MDL）
-MDL  无法手动干预，在访问一个表时 MySQL 会自动加上。
+MDL  无法手动干预，在访问一个表时 MySQL 会自动加上，
 
 MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能保证一致性时，会出现：
 
@@ -81,11 +81,11 @@ MDL 可能导致的问题
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjk3MzIxMTMsOTczMTY1NTY4LDIwNz
-kyNzAwMTEsLTU1MDUzMDcyMiwtODY5NTE3Mjk3LDY3NzkwMjY2
-NiwyMTIzMjQ5MjE3LDExMDYzMTMwNTYsLTczOTEyMzg1OSwtND
-U5Njk5MTgyLDE5NjMyOTQ4NjUsMTQ0NjAxMTg3LDE5NjMyOTQ4
-NjUsLTEzMTIyOTQzLC05OTkzNDAxMDgsLTY2MDM3Nzk4NywtMj
-k0ODAyNDksLTYwODU0NzgzNywxMDQ2MTEzNjM3LDEyNTE0Mzc0
-MzZdfQ==
+eyJoaXN0b3J5IjpbLTQ5MTQ1NTk2MywtMTE2OTczMjExMyw5Nz
+MxNjU1NjgsMjA3OTI3MDAxMSwtNTUwNTMwNzIyLC04Njk1MTcy
+OTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1NiwtNz
+M5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxNDQ2MDEx
+ODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEwOCwtNj
+YwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3LDEwNDYxMTM2
+MzddfQ==
 -->
