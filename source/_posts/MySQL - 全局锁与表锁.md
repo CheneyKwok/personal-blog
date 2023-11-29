@@ -36,11 +36,13 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 > –single-transaction 使用的前提是库中的所有表的存储引擎都使用了事务，否则只能使用 FTWRL。
 
 原因是当 mysqldump 使用参数 –single-transaction 时，导出数据之前会启动一个事务，来确保拿到一致性视图。而由于 MVCC 的支持，可以执行更新。
+
+全库只读
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MzI5NDg2NSwxNDQ2MDExODcsMTk2Mz
-I5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEwOCwtNjYwMzc3OTg3
-LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3LDEwNDYxMTM2MzcsMTI1MT
-QzNzQzNiwyMDY4ODQ2OTc1LC01MTQwOTY4MzEsMTk5MTA0MzQy
-NywtMTk0MzQ2NTUzNiwtMTM2OTQ0NjMxMCwtNTAxMDMwODYwXX
-0=
+eyJoaXN0b3J5IjpbLTEwNjkzNjQxNzUsMTk2MzI5NDg2NSwxND
+Q2MDExODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEw
+OCwtNjYwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3LDEwND
+YxMTM2MzcsMTI1MTQzNzQzNiwyMDY4ODQ2OTc1LC01MTQwOTY4
+MzEsMTk5MTA0MzQyNywtMTk0MzQ2NTUzNiwtMTM2OTQ0NjMxMC
+wtNTAxMDMwODYwXX0=
 -->
