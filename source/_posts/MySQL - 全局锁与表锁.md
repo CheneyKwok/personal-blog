@@ -63,7 +63,7 @@ UNLOCK TABLES；
 对于不支持更细粒度的锁的引擎，表锁是最常用的处理并发的方式。而对于 InnoDB 引擎，其支持行锁，一般不使用表锁。
 
 ### 元数据锁（metadata lock， MDL）
-MDL  无法手动干预，在访问一个表时 MySQL 会自动加上，
+MDL  无法手动干预，在访问一个表时 MySQL 会自动加上，直到事务提交才会释放。
 
 MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能保证一致性时，会出现：
 
@@ -77,11 +77,11 @@ MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能�
 - 读锁之间不互斥， 因此可以多个线程可以对同一张表进行 DML。
 - 读写锁之间、写锁之间是互斥的， 即 DML 、DDL 之间互相阻塞，DDL 之间互相阻塞。
 
-MDL 可能导致的问题
+MDL 可能导致的问题：对一张表执行了 DDL 操作，导致后续该表的所有
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MTQ1NTk2MywtMTE2OTczMjExMyw5Nz
+eyJoaXN0b3J5IjpbMTEwMDEyNzc2NiwtMTE2OTczMjExMyw5Nz
 MxNjU1NjgsMjA3OTI3MDAxMSwtNTUwNTMwNzIyLC04Njk1MTcy
 OTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1NiwtNz
 M5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxNDQ2MDEx
