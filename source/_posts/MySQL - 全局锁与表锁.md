@@ -81,15 +81,23 @@ MDL 可能导致的问题：对一张表执行了 DDL 操作，导致后续该�
 过程如下：
 
 ```sql
-// se's's
+# session A
+BEGIN;
+SELECT * FROM `user`;
+
+# session B
+ALTER TABLE `user` ADD INDEX index_name(name);
+
+# session C
+SELECT * FROM `user`;
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxOTUyNjg4NCwtMTE2OTczMjExMyw5Nz
-MxNjU1NjgsMjA3OTI3MDAxMSwtNTUwNTMwNzIyLC04Njk1MTcy
-OTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1NiwtNz
-M5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxNDQ2MDEx
-ODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEwOCwtNj
-YwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3LDEwNDYxMTM2
-MzddfQ==
+eyJoaXN0b3J5IjpbLTE2ODE1NzE1MjYsLTExNjk3MzIxMTMsOT
+czMTY1NTY4LDIwNzkyNzAwMTEsLTU1MDUzMDcyMiwtODY5NTE3
+Mjk3LDY3NzkwMjY2NiwyMTIzMjQ5MjE3LDExMDYzMTMwNTYsLT
+czOTEyMzg1OSwtNDU5Njk5MTgyLDE5NjMyOTQ4NjUsMTQ0NjAx
+MTg3LDE5NjMyOTQ4NjUsLTEzMTIyOTQzLC05OTkzNDAxMDgsLT
+Y2MDM3Nzk4NywtMjk0ODAyNDksLTYwODU0NzgzNywxMDQ2MTEz
+NjM3XX0=
 -->
