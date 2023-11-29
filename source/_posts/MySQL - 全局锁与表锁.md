@@ -67,17 +67,18 @@ MDL  无法手动干预，在访问一个表时 MySQL 会自动加上。
 
 MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能保证一致性时，会出现：
 
-- 事务隔离问题：比如 RR 的隔离级别下，在 session A 对 t 的两次查询期间，session B 对 t 的表结构做了修改，则会导致 session A 的两次查询结果不一致，无法m
+- 事务隔离问题：比如 RR 的隔离级别下，在 session A 对 t 的两次查询期间，session B 对 t 的表结构做了修改，则会导致 session A 的两次查询结果不一致，无法满足可重复读。
+- 数据同步问题：比如 session A 执行了
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2ODI0MDE0NiwtNTUwNTMwNzIyLC04Nj
-k1MTcyOTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1
-NiwtNzM5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxND
-Q2MDExODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEw
-OCwtNjYwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3LDEwND
-YxMTM2MzcsMTI1MTQzNzQzNiwyMDY4ODQ2OTc1LC01MTQwOTY4
-MzFdfQ==
+eyJoaXN0b3J5IjpbLTEzMzAyMjkzMjUsLTU1MDUzMDcyMiwtOD
+Y5NTE3Mjk3LDY3NzkwMjY2NiwyMTIzMjQ5MjE3LDExMDYzMTMw
+NTYsLTczOTEyMzg1OSwtNDU5Njk5MTgyLDE5NjMyOTQ4NjUsMT
+Q0NjAxMTg3LDE5NjMyOTQ4NjUsLTEzMTIyOTQzLC05OTkzNDAx
+MDgsLTY2MDM3Nzk4NywtMjk0ODAyNDksLTYwODU0NzgzNywxMD
+Q2MTEzNjM3LDEyNTE0Mzc0MzYsMjA2ODg0Njk3NSwtNTE0MDk2
+ODMxXX0=
 -->
