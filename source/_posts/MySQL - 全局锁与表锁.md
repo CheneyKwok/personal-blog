@@ -42,9 +42,11 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 原因是当 mysqldump 使用参数 –single-transaction 时，导出数据之前会启动一个事务，来确保拿到一致性视图。而由于 MVCC 的支持，可以执行更新。
 
 实现全库只读，`set global readonly = true` 是否可以？
+可以实现只读，但会有其他影响：
 
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNzY1NzAzNiwtNDU5Njk5MTgyLDE5Nj
+eyJoaXN0b3J5IjpbLTczOTEyMzg1OSwtNDU5Njk5MTgyLDE5Nj
 MyOTQ4NjUsMTQ0NjAxMTg3LDE5NjMyOTQ4NjUsLTEzMTIyOTQz
 LC05OTkzNDAxMDgsLTY2MDM3Nzk4NywtMjk0ODAyNDksLTYwOD
 U0NzgzNywxMDQ2MTEzNjM3LDEyNTE0Mzc0MzYsMjA2ODg0Njk3
