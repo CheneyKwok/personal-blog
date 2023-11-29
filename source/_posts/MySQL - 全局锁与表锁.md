@@ -46,12 +46,16 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 
 - readonly 的值可能会用于其他逻辑的判断，比如用来判断一个库是主库还是从库。
 - 异常处理机制上的差异。FTWRL 命令在客户端异常断开时，MySQL 会自动释放该全局锁，而设置 readonly 之后，如果客户端发生异常，整个库会一直保持 readonly 状态。
+
+## 表级锁
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyMzI0OTIxNywxMTA2MzEzMDU2LC03Mz
-kxMjM4NTksLTQ1OTY5OTE4MiwxOTYzMjk0ODY1LDE0NDYwMTE4
-NywxOTYzMjk0ODY1LC0xMzEyMjk0MywtOTk5MzQwMTA4LC02Nj
-AzNzc5ODcsLTI5NDgwMjQ5LC02MDg1NDc4MzcsMTA0NjExMzYz
-NywxMjUxNDM3NDM2LDIwNjg4NDY5NzUsLTUxNDA5NjgzMSwxOT
-kxMDQzNDI3LC0xOTQzNDY1NTM2LC0xMzY5NDQ2MzEwLC01MDEw
-MzA4NjBdfQ==
+eyJoaXN0b3J5IjpbLTE1NjYyNTk0MzMsMjEyMzI0OTIxNywxMT
+A2MzEzMDU2LC03MzkxMjM4NTksLTQ1OTY5OTE4MiwxOTYzMjk0
+ODY1LDE0NDYwMTE4NywxOTYzMjk0ODY1LC0xMzEyMjk0MywtOT
+k5MzQwMTA4LC02NjAzNzc5ODcsLTI5NDgwMjQ5LC02MDg1NDc4
+MzcsMTA0NjExMzYzNywxMjUxNDM3NDM2LDIwNjg4NDY5NzUsLT
+UxNDA5NjgzMSwxOTkxMDQzNDI3LC0xOTQzNDY1NTM2LC0xMzY5
+NDQ2MzEwXX0=
 -->
