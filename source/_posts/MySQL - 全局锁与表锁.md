@@ -74,11 +74,12 @@ MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能�
 
 执行 DDL 操作时，会加 MDL 写锁。
 
-- 读锁之间不互斥， 因此可以多个线程可以对同一张表
+- 读锁之间不互斥， 因此可以多个线程可以对同一张表进行 DML；
+- 读写锁之间、写锁之间是互斥的，
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMDQ0NTIxOCwtNTUwNTMwNzIyLC04Nj
+eyJoaXN0b3J5IjpbMTYwNDA0MzMzOCwtNTUwNTMwNzIyLC04Nj
 k1MTcyOTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1
 NiwtNzM5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxND
 Q2MDExODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEw
