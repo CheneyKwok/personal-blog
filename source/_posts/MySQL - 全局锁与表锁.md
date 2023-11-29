@@ -48,7 +48,7 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 - 异常处理机制上的差异。FTWRL 命令在客户端异常断开时，MySQL 会自动释放该全局锁，而设置 readonly 之后，如果客户端发生异常，整个库会一直保持 readonly 状态。
 
 ## 表级锁
-表级锁分为两种：表锁、元数据锁（meta data lock，MDL）。
+表级锁分为两种：表锁、元数据锁（metadata lock，MDL）。
 
 ###  表锁
 表锁命令：
@@ -63,9 +63,10 @@ UNLOCK TABLES；
 
 对于不支持更细粒度的锁的引擎，表锁是最常用的处理并发的方式。而对于 InnoDB 引擎，其支持行锁，一般不使用表锁。
 
-### 元数据锁
+### 元数据锁（metadata lock， MDL）
+MDL b'v
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MDEzNzY1MCw2Nzc5MDI2NjYsMjEyMz
+eyJoaXN0b3J5IjpbMTU2NjYxOTA4NCw2Nzc5MDI2NjYsMjEyMz
 I0OTIxNywxMTA2MzEzMDU2LC03MzkxMjM4NTksLTQ1OTY5OTE4
 MiwxOTYzMjk0ODY1LDE0NDYwMTE4NywxOTYzMjk0ODY1LC0xMz
 EyMjk0MywtOTk5MzQwMTA4LC02NjAzNzc5ODcsLTI5NDgwMjQ5
