@@ -15,11 +15,11 @@ tags: MySQL
  Flush tables with read lock;
 ```
      
-执行该命令后，其他线程的以下语句会被阻塞：
+执行该命令后，**其他线程**的以下语句会被阻塞：
 
  - 数据更新语句（增删改）
  - 数据定义语句（表的建立和修改、索引的建立和修改）
- >  更新类的事务的提交语句可以提交，原因待深究
+ - 更新类事务的提交语句
 
 **使用场景**：全库逻辑备份
 
@@ -37,9 +37,9 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 
 原因是当 mysqldump 使用参数 –single-transaction 时，导出数据之前会启动一个事务，来确保拿到一致性视图。而由于 MVCC 的支持，可以执行更新。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTIyOTQzLC05OTkzNDAxMDgsLTY2MD
-M3Nzk4NywtMjk0ODAyNDksLTYwODU0NzgzNywxMDQ2MTEzNjM3
-LDEyNTE0Mzc0MzYsMjA2ODg0Njk3NSwtNTE0MDk2ODMxLDE5OT
-EwNDM0MjcsLTE5NDM0NjU1MzYsLTEzNjk0NDYzMTAsLTUwMTAz
-MDg2MF19
+eyJoaXN0b3J5IjpbMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OT
+M0MDEwOCwtNjYwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3
+LDEwNDYxMTM2MzcsMTI1MTQzNzQzNiwyMDY4ODQ2OTc1LC01MT
+QwOTY4MzEsMTk5MTA0MzQyNywtMTk0MzQ2NTUzNiwtMTM2OTQ0
+NjMxMCwtNTAxMDMwODYwXX0=
 -->
