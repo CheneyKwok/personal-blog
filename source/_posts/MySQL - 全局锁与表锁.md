@@ -68,13 +68,13 @@ MDL  无法手动干预，在访问一个表时 MySQL 会自动加上。
 MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能保证一致性时，会出现：
 
 - 事务隔离问题：RR 的隔离级别下，在 session A 对 t 的两次查询期间，session B 对 t 的表结构做了修改，则会导致 session A 的两次查询结果不一致，无法满足可重复读。
-- 数据同步问题：session A 对 t 执行更新操作并且未提交，session B 对 t 的表结构做了修改，此时 binlog 中会先记录 alter 操作，再记录更新操作
+- 数据同步问题：session A 对 t 执行更新操作并且未提交，session B 对 t 的表结构做了修改，此时 binlog 中会先记录 alter 操作，再记录更新操作，那么从库在同步时，也会先重做 alter，再重做 update。
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNjEyMTczNSwtNTUwNTMwNzIyLC04Nj
+eyJoaXN0b3J5IjpbLTg2MjY0MjEyMywtNTUwNTMwNzIyLC04Nj
 k1MTcyOTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1
 NiwtNzM5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxND
 Q2MDExODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OTM0MDEw
