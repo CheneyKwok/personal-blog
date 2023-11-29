@@ -64,9 +64,9 @@ UNLOCK TABLES；
 对于不支持更细粒度的锁的引擎，表锁是最常用的处理并发的方式。而对于 InnoDB 引擎，其支持行锁，一般不使用表锁。
 
 ### 元数据锁（metadata lock， MDL）
-MDL b'v
+MDL 不需要显示使用，在访问一个表时 MySQL 会自动加上。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NjYxOTA4NCw2Nzc5MDI2NjYsMjEyMz
+eyJoaXN0b3J5IjpbLTg2OTUxNzI5Nyw2Nzc5MDI2NjYsMjEyMz
 I0OTIxNywxMTA2MzEzMDU2LC03MzkxMjM4NTksLTQ1OTY5OTE4
 MiwxOTYzMjk0ODY1LDE0NDYwMTE4NywxOTYzMjk0ODY1LC0xMz
 EyMjk0MywtOTk5MzQwMTA4LC02NjAzNzc5ODcsLTI5NDgwMjQ5
