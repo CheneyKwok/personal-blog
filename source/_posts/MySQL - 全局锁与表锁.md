@@ -12,9 +12,10 @@ tags: MySQL
 即对整个数据库实例进行加锁。
 全局读锁命令：
 
-```yaml
+```sql
  # 加锁
  FLUSH TABLES WITH READ LOCK;
+ 
  # 解锁
  UNLOCK TABLES;
 ```
@@ -51,9 +52,10 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 
 ###  表锁
 表锁命令：
-```yaml
+```sql
 # 加锁
 LOCK TABLES t1 READ/WRITE;
+
 # 解锁
 UNLOCK TABLES；
 ```
@@ -83,21 +85,22 @@ MDL 可能导致的问题：对一张表执行了 DDL 操作，导致后续该�
 ```sql
 # session A
 BEGIN;
-SELECT * FROM `user`;
+SELECT * FROM `user`; # 
 
 # session B
 ALTER TABLE `user` ADD INDEX index_name(name);
 
 # session C
 SELECT * FROM `user`;
+
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODE1NzE1MjYsLTExNjk3MzIxMTMsOT
-czMTY1NTY4LDIwNzkyNzAwMTEsLTU1MDUzMDcyMiwtODY5NTE3
-Mjk3LDY3NzkwMjY2NiwyMTIzMjQ5MjE3LDExMDYzMTMwNTYsLT
-czOTEyMzg1OSwtNDU5Njk5MTgyLDE5NjMyOTQ4NjUsMTQ0NjAx
-MTg3LDE5NjMyOTQ4NjUsLTEzMTIyOTQzLC05OTkzNDAxMDgsLT
-Y2MDM3Nzk4NywtMjk0ODAyNDksLTYwODU0NzgzNywxMDQ2MTEz
-NjM3XX0=
+eyJoaXN0b3J5IjpbMTQxMzA0NDE3LC0xMTY5NzMyMTEzLDk3Mz
+E2NTU2OCwyMDc5MjcwMDExLC01NTA1MzA3MjIsLTg2OTUxNzI5
+Nyw2Nzc5MDI2NjYsMjEyMzI0OTIxNywxMTA2MzEzMDU2LC03Mz
+kxMjM4NTksLTQ1OTY5OTE4MiwxOTYzMjk0ODY1LDE0NDYwMTE4
+NywxOTYzMjk0ODY1LC0xMzEyMjk0MywtOTk5MzQwMTA4LC02Nj
+AzNzc5ODcsLTI5NDgwMjQ5LC02MDg1NDc4MzcsMTA0NjExMzYz
+N119
 -->
