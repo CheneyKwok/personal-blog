@@ -78,9 +78,14 @@ MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能�
 
 MDL 可能导致的问题：对一张表执行了 DDL 操作，导致后续该表的所有DML 操作全部阻塞。
 
+过程如下：
+
+```sql
+// se's's
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3ODQ2NTI4OSwtMTE2OTczMjExMyw5Nz
+eyJoaXN0b3J5IjpbMTgxOTUyNjg4NCwtMTE2OTczMjExMyw5Nz
 MxNjU1NjgsMjA3OTI3MDAxMSwtNTUwNTMwNzIyLC04Njk1MTcy
 OTcsNjc3OTAyNjY2LDIxMjMyNDkyMTcsMTEwNjMxMzA1NiwtNz
 M5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2NSwxNDQ2MDEx
