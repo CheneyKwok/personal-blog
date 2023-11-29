@@ -67,13 +67,13 @@ MDL  无法手动干预，在访问一个表时 MySQL 会自动加上。
 
 MDL 的作用是保证 DDL 操作 与 DML 操作之间的一致性，当不能保证一致性时，会出现：
 
-- 事务隔离问题
+- 事务隔离问题：在 RR 的隔离级别下，session A 对 t 的两次查询期间，
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk2MjMzNDYwLC01NTA1MzA3MjIsLTg2OT
+eyJoaXN0b3J5IjpbMTMwNDE3NDY1LC01NTA1MzA3MjIsLTg2OT
 UxNzI5Nyw2Nzc5MDI2NjYsMjEyMzI0OTIxNywxMTA2MzEzMDU2
 LC03MzkxMjM4NTksLTQ1OTY5OTE4MiwxOTYzMjk0ODY1LDE0ND
 YwMTE4NywxOTYzMjk0ODY1LC0xMzEyMjk0MywtOTk5MzQwMTA4
