@@ -52,11 +52,15 @@ mysqldump 加上 –single-transaction  参数可以保证备份后的库是在�
 
 ###  表锁
 表锁命令：
-```sql
-jia
+```yaml
+# 加锁
+LOCK TABLES t1 READ/WRITE;
+# 解锁
+UNLOCK TABLES；
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTkzNjY5Njg4LDIxMjMyNDkyMTcsMTEwNj
+eyJoaXN0b3J5IjpbNTYzMDg4MDYyLDIxMjMyNDkyMTcsMTEwNj
 MxMzA1NiwtNzM5MTIzODU5LC00NTk2OTkxODIsMTk2MzI5NDg2
 NSwxNDQ2MDExODcsMTk2MzI5NDg2NSwtMTMxMjI5NDMsLTk5OT
 M0MDEwOCwtNjYwMzc3OTg3LC0yOTQ4MDI0OSwtNjA4NTQ3ODM3
