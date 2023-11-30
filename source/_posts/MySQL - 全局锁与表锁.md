@@ -97,7 +97,7 @@ SELECT * FROM `user`;
 
 此时 session B 和 session C 都会处于阻塞等待状态，执行  `SHOW PROCESSLIST;` 查看 session 状态：
 
-![1](http://cdn.cheney.vip/MySQL-%E5%85%A8%E5%B1%80%E9%94%81%E4%B8%8E%E8%A1%A8%E9%94%81-1.png)
+![1](./../../.images/MySQL-全局锁与表锁-1.png)
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbODEwMzM2MDE4LDEyOTEzNDI5NTksLTE3MT
 M3MjkwNzMsNDUzMDkyMTA1LC0xMTY5NzMyMTEzLDk3MzE2NTU2
