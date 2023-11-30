@@ -101,7 +101,7 @@ SELECT * FROM `user`;
 
 发现 session B 和 session A 的 state 的是 `Waiting for table metadata lock`。
 
-原因：MDL 是 server 层的锁，申请 metadata 锁的操作会形成一个队列，此时 session B 申请写锁的获取优先级是高于 session C 读锁的，所以一旦写锁等待，不仅dang
+原因：MDL 是 server 层的锁，申请 metadata 锁的操作会形成一个队列，此时 session B 申请写锁的获取优先级是高于 session C 读锁的，所以一旦写锁等待，不仅 session B 会被阻塞，后续所有访问该表的 session 的所有操作都会阻塞。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTY5Njk5NzksMTczMzYxNzc4Ml19
+eyJoaXN0b3J5IjpbLTcxMzk2MDI3LDE3MzM2MTc3ODJdfQ==
 -->
