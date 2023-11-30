@@ -99,7 +99,9 @@ SELECT * FROM `user`;
 
 ![session 状态](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/MySQL-%E5%85%A8%E5%B1%80%E9%94%81%E4%B8%8E%E8%A1%A8%E7%BA%A7%E9%94%81-1.png)
 
-发现 se
+发现 session B 和 session A 的 state 的是 `Waiting for table metadata lock`。
+
+原因：
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDk0NjQwNDZdfQ==
+eyJoaXN0b3J5IjpbMTczMzYxNzc4Ml19
 -->
