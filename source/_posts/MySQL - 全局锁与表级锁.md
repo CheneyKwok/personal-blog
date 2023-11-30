@@ -103,8 +103,8 @@ SELECT * FROM `user`;
 
 原因：session C 本身不会被 session A 阻塞，因为读锁之间不互斥，但是申请 metadata 锁的操作会形成一个队列，session B 写锁的获取优先级是高于 session C 读锁的，所以一旦写锁等待，不仅 session B 会被阻塞，session C 也会阻塞等待，后续所有访问该表的所有操作都会阻塞。如果该表中的某个查询语句频繁，并且客户端有重试机制，即超时后会再起一个 session 去请求，那么 MySQL 的连接很快就会消耗完，线程很快就会爆满。
 
-
+如果此时 session A 提交或者
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTQ0Nzk0MzYsLTEyODcxNzIwNjcsMT
-czMzYxNzc4Ml19
+eyJoaXN0b3J5IjpbMTYzNTM2NzcxMiwtMTI4NzE3MjA2NywxNz
+MzNjE3NzgyXX0=
 -->
