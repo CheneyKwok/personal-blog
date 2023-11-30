@@ -1,5 +1,5 @@
 ---
-title: MySQL - 全局锁与表锁
+title: MySQL - 全局锁与表级锁
 date: 2023-11-28 15:33:01
 tags: MySQL
 
@@ -101,7 +101,7 @@ SELECT * FROM `user`;
 
 发现 session B 和 session A 的 state 的是 `Waiting for table metadata lock`。
 
-原因：
+原因：MDL 是 server 层的锁，申请 metadata 锁的操作会形成一个队列
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczMzYxNzc4Ml19
+eyJoaXN0b3J5IjpbMTAzMjc2NTEwLDE3MzM2MTc3ODJdfQ==
 -->
