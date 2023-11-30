@@ -98,6 +98,8 @@ SELECT * FROM `user`;
 此时 session B 和 session C 都会处于阻塞等待状态，执行  `SHOW PROCESSLIST;` 查看 session 状态：
 
 ![session 状态](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/MySQL-%E5%85%A8%E5%B1%80%E9%94%81%E4%B8%8E%E8%A1%A8%E7%BA%A7%E9%94%81-1.png)
+
+发现 se
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0MTIwMDM2NV19
+eyJoaXN0b3J5IjpbLTE3NDk0NjQwNDZdfQ==
 -->
