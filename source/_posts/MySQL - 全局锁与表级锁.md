@@ -103,7 +103,90 @@ SELECT * FROM `user`;
 
 原因：session C 本身不会被 session A 阻塞，因为读锁之间不互斥，但是申请 metadata 锁的操作会形成一个队列，session B 写锁的获取优先级是高于 session C 读锁的，所以一旦写锁等待，不仅 session B 会被阻塞，session C 也会阻塞等待，后续所有访问该表的所有操作都会阻塞。如果该表中的某个查询语句频繁，并且客户端有重试机制，即超时后会再起一个 session 去请求，那么 MySQL 的连接很快就会消耗完，线程很快就会爆满。
 
+#### 如何定位阻塞源头
+
+performance_schema.metadata_locks 表会记录 metadata 锁的信息，包括持有对象、类型、状态等。5.7 默认设置是关闭的，8.0 默认打开，通过以下命令开启：
+
+```sql
+UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'YES' WHERE NAME = 'wait/lock/metadata/sql/mdl';
+```
+如果要永久生效，在配置文件中配置：
+
+```yaml
+[mysqld]performance-schema-instrument='wait/lock/metadata/sql/mdl=ON'
+```
+同时需要关联另外两张表 `performance_schema.thread`、`performance_schema.events_statements_history`。
+
+`thread`  记录了线程信息，`events_statements_history` 记录了历史事件 sql。
+
+关联后完整 sql ：
+
+```sql
+SELECT locked_schema,
+locked_table,
+locked_type,
+waiting_processlist_id,
+waiting_age,
+waiting_query,
+waiting_state,
+blocking_processlist_id,
+blocking_age,
+substring_index(sql_text,"transaction_begin;" ,-1) AS blocking_query,
+sql_kill_blocking_connection
+FROM 
+( 
+SELECT 
+b.OWNER_THREAD_ID AS granted_thread_id,
+a.OBJECT_SCHEMA AS locked_schema,
+a.OBJECT_NAME AS locked_table,
+"Metadata Lock" AS locked_type,
+c.PROCESSLIST_ID AS waiting_processlist_id,
+c.PROCESSLIST_TIME AS waiting_age,
+c.PROCESSLIST_INFO AS waiting_query,
+c.PROCESSLIST_STATE AS waiting_state,
+d.PROCESSLIST_ID AS blocking_processlist_id,
+d.PROCESSLIST_TIME AS blocking_age,
+d.PROCESSLIST_INFO AS blocking_query,
+concat('KILL ', d.PROCESSLIST_ID) AS sql_kill_blocking_connection
+FROM performance_schema.metadata_locks a JOIN performance_schema.metadata_locks b ON a.OBJECT_SCHEMA = b.OBJECT_SCHEMA AND a.OBJECT_NAME = b.OBJECT_NAME
+AND a.lock_status = 'PENDING'
+AND b.lock_status = 'GRANTED'
+AND a.OWNER_THREAD_ID <> b.OWNER_THREAD_ID
+AND a.lock_type = 'EXCLUSIVE'
+JOIN performance_schema.threads c ON a.OWNER_THREAD_ID = c.THREAD_ID JOIN performance_schema.threads d ON b.OWNER_THREAD_ID = d.THREAD_ID
+) t1,
+(
+SELECT thread_id, group_concat( CASE WHEN EVENT_NAME = 'statement/sql/begin' THEN "transaction_begin" ELSE sql_text END ORDER BY event_id SEPARATOR ";" ) AS sql_text
+FROM
+performance_schema.events_statements_history
+GROUP BY thread_id
+) t2
+WHERE t1.granted_thread_id = t2.thread_id; \G
+
+*************************** 1. row ***************************
+               locked_schema: report-vision
+                locked_table: students
+                 locked_type: Metadata Lock
+      waiting_processlist_id: 13
+                 waiting_age: 938
+               waiting_query: alter table students add column col1 int
+               waiting_state: Waiting for table metadata lock
+     blocking_processlist_id: 12
+                blocking_age: 947
+              blocking_query: SELECT * from students where id=1
+	 sql_kill_blocking_connecti
+on: KILL 12
+1 row in set, 2 warnings (0.01 sec)
+```
+显示结果中，`processlist_id` 为 12 的线程阻塞了线程 13，所以 `kill 12` 即可解锁。
+
+#### 如何避免 metadata 锁阻塞业务问题
+
+- 开启 metadata_locks 表记录 MDL 锁
+- 规范使用事务，及时提交事务，避免使用大事务
+- DDL 操作级备份操作放在业务低峰期执行
+- 设置 lock_wait_timeout 为较小值，让被阻塞端主动停止
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MjA0ODAwNiwxNjM1MzY3NzEyLC0xMj
-g3MTcyMDY3LDE3MzM2MTc3ODJdfQ==
+eyJoaXN0b3J5IjpbLTQ5OTgzMTkwNSwxODgyMDQ4MDA2LDE2Mz
+UzNjc3MTIsLTEyODcxNzIwNjcsMTczMzYxNzc4Ml19
 -->
