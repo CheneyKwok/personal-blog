@@ -109,12 +109,14 @@ performance_schema.metadata_locks 表会记录 metadata 锁的信息，包括持
 
 ```sql
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'YES' WHERE NAME = 'wait/lock/metadata/sql/mdl';
+
 ```
 如果要永久生效，在配置文件中配置：
 
 ```yaml
 [mysqld]performance-schema-instrument='wait/lock/metadata/sql/mdl=ON'
 ```
+
 同时需要关联另外两张表 `performance_schema.thread`、`performance_schema.events_statements_history`。
 
 `thread`  记录了线程信息，`events_statements_history` 记录了历史事件 sql。
@@ -187,6 +189,7 @@ on: KILL 12
 - DDL 操作级备份操作放在业务低峰期执行
 - 设置 lock_wait_timeout 为较小值，让被阻塞端主动停止
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5OTgzMTkwNSwxODgyMDQ4MDA2LDE2Mz
-UzNjc3MTIsLTEyODcxNzIwNjcsMTczMzYxNzc4Ml19
+eyJoaXN0b3J5IjpbMTc5NDY0MjQ2MywtNDk5ODMxOTA1LDE4OD
+IwNDgwMDYsMTYzNTM2NzcxMiwtMTI4NzE3MjA2NywxNzMzNjE3
+NzgyXX0=
 -->
