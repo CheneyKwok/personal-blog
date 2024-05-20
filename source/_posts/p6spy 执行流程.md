@@ -5,8 +5,9 @@ tags: 框架
 
 ---
 ##
-
+![session 状态](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-1.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4NzkxMzU4Niw1OTc0ODM0NjRdfQ==
+eyJoaXN0b3J5IjpbMTc5ODY5NDQ4LDE4ODc5MTM1ODYsNTk3ND
+gzNDY0XX0=
 -->
