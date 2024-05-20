@@ -19,9 +19,9 @@ tags: 框架
 
 ![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-5.png)
 
-4. StatementWrapper chong
+4. StatementWrapper 重写 executeQuery()，在执行sql之后调用 JdbcEventListener 的 onAfterExecuteQuery()
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDMyNDA1MCwxOTY3NzUzNTUzLC0xMT
+eyJoaXN0b3J5IjpbLTY2NDI2NzA1OCwxOTY3NzUzNTUzLC0xMT
 Q3MDM4NTYzLC04MjY3NTkyNTUsLTU4OTgzMzkzOSwtMTI1MzE3
 Mzg1OSwxODg3OTEzNTg2LDU5NzQ4MzQ2NF19
 -->
