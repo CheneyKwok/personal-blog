@@ -24,10 +24,14 @@ tags: 框架
 
 ![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-7.png)
 
-5. 最终执行子类 LoggingEventListener 的 onAfterAnyExecute()，调用 Slf4JLogger
+5. 最终执行子类 LoggingEventListener 的 onAfterAnyExecute()，调用 P6Logger 的 logSQL()
 ![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-8.png)
+
+![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-9.png)
+
+![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-10.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2OTA1NzE0NSwxOTY3NzUzNTUzLC0xMT
+eyJoaXN0b3J5IjpbMjExMjc3NDY4MSwxOTY3NzUzNTUzLC0xMT
 Q3MDM4NTYzLC04MjY3NTkyNTUsLTU4OTgzMzkzOSwtMTI1MzE3
 Mzg1OSwxODg3OTEzNTg2LDU5NzQ4MzQ2NF19
 -->
