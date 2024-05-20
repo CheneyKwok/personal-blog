@@ -13,7 +13,10 @@ tags: 框架
 ![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-2.png)
 
 ![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-3.png)
+
+3. ConnectionWrapper 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyNjc1OTI1NSwtNTg5ODMzOTM5LC0xMj
-UzMTczODU5LDE4ODc5MTM1ODYsNTk3NDgzNDY0XX0=
+eyJoaXN0b3J5IjpbMjE4MzUzNTM1LC04MjY3NTkyNTUsLTU4OT
+gzMzkzOSwtMTI1MzE3Mzg1OSwxODg3OTEzNTg2LDU5NzQ4MzQ2
+NF19
 -->
