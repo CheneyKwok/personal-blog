@@ -19,9 +19,9 @@ tags: 框架
 
 ![p6spy执行流程](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-5.png)
 
-
+4. StatementWrapper
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjc1MjE1NDMsLTExNDcwMzg1NjMsLT
-gyNjc1OTI1NSwtNTg5ODMzOTM5LC0xMjUzMTczODU5LDE4ODc5
-MTM1ODYsNTk3NDgzNDY0XX0=
+eyJoaXN0b3J5IjpbMTk2Nzc1MzU1MywtMTE0NzAzODU2MywtOD
+I2NzU5MjU1LC01ODk4MzM5MzksLTEyNTMxNzM4NTksMTg4Nzkx
+MzU4Niw1OTc0ODM0NjRdfQ==
 -->
