@@ -14,7 +14,18 @@ tags: 框架
 </dependency>
 ```
 2.  配置 spy.properties 文件
+```
+logMessageFormat=com.xxx.P6SpyLogger  
+appender=com.p6spy.engine.spy.appender.Slf4JLogger  
+dateformat=yyyy-MM-dd HH:mm:ss  
+# 过滤 druid 空闲检测语句  
+filter=true  
+exclude=DUAL
+```
+3.  自定义日志格式
+```
 
+```
 
 ## 流程
 
@@ -44,7 +55,7 @@ tags: 框架
 
 	![p6spy执行流程-10](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-10.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzQ1Mzk4NjYsLTMwNTc5NTU0Miw1MT
+eyJoaXN0b3J5IjpbLTIxMTYxNjEyNjksLTMwNTc5NTU0Miw1MT
 kxMTcxODAsMjExMjc3NDY4MSwxOTY3NzUzNTUzLC0xMTQ3MDM4
 NTYzLC04MjY3NTkyNTUsLTU4OTgzMzkzOSwtMTI1MzE3Mzg1OS
 wxODg3OTEzNTg2LDU5NzQ4MzQ2NF19
