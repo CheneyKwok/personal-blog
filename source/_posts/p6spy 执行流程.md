@@ -34,7 +34,7 @@ public class P6SpyLogger implements MessageFormattingStrategy {
 	 * @param sql: 最终执行的SQL  
 	 * @param url: 数据库连接地址  
 	 * @return 格式化日志结果  
-	  */  
+	 */  
   @Override  
   public String formatMessage(int connectionId, String now, long elapsed, String category, String prepared, String sql, String url) {  
   if (StrUtil.isBlank(sql) || "SELECT 1 FROM DUAL".equals(sql)) {  
@@ -74,7 +74,7 @@ public class P6SpyLogger implements MessageFormattingStrategy {
 
 	![p6spy执行流程-10](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-10.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNjc2NDM5LC0zMDU3OTU1NDIsNTE5MT
+eyJoaXN0b3J5IjpbMzgxNDExOTMzLC0zMDU3OTU1NDIsNTE5MT
 E3MTgwLDIxMTI3NzQ2ODEsMTk2Nzc1MzU1MywtMTE0NzAzODU2
 MywtODI2NzU5MjU1LC01ODk4MzM5MzksLTEyNTMxNzM4NTksMT
 g4NzkxMzU4Niw1OTc0ODM0NjRdfQ==
