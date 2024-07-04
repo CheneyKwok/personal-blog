@@ -1,9 +1,10 @@
 ---
-title: p6spy 执行流程
+title: p6spy 配置及执行流程
 date: 2023-12-10 10:53:20
 tags: 框架
 
 ---
+#
 ## 流程
 
 1. 配置 p6spy 的 mysql 驱动：com.p6spy.engine.spy.P6SpyDriver
@@ -32,8 +33,8 @@ tags: 框架
 
 	![p6spy执行流程-10](https://cdn.jsdelivr.net/gh/CheneyKwok/img-storage/blog/p6spy执行流程-10.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNTc5NTU0Miw1MTkxMTcxODAsMjExMj
-c3NDY4MSwxOTY3NzUzNTUzLC0xMTQ3MDM4NTYzLC04MjY3NTky
-NTUsLTU4OTgzMzkzOSwtMTI1MzE3Mzg1OSwxODg3OTEzNTg2LD
-U5NzQ4MzQ2NF19
+eyJoaXN0b3J5IjpbNjI4MDIxMDQsLTMwNTc5NTU0Miw1MTkxMT
+cxODAsMjExMjc3NDY4MSwxOTY3NzUzNTUzLC0xMTQ3MDM4NTYz
+LC04MjY3NTkyNTUsLTU4OTgzMzkzOSwtMTI1MzE3Mzg1OSwxOD
+g3OTEzNTg2LDU5NzQ4MzQ2NF19
 -->
